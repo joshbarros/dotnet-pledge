@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="../../libs/shared/Pledge.Shared.csproj" />
+    <ProjectReference Include="../../libs/identity/Pledge.Identity.csproj" />
+    <ProjectReference Include="../../libs/donations/Pledge.Donations.csproj" />
+    <ProjectReference Include="../../libs/pools/Pledge.Pools.csproj" />
+    <ProjectReference Include="../../libs/receipts/Pledge.Receipts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Pledge.IntegrationTests" />
+  </ItemGroup>
+</Project>

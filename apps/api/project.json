@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "targets": {
+    "restore": {
+      "executor": "nx:run-commands",
+      "options": { "command": "dotnet restore apps/api/Pledge.Api.csproj" }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["restore"],
+      "options": { "command": "dotnet build apps/api/Pledge.Api.csproj --no-restore" }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "continuous": true,
+      "options": {
+        "command": "dotnet run --project apps/api/Pledge.Api.csproj --no-launch-profile --urls http://localhost:5222",
+        "env": { "ASPNETCORE_ENVIRONMENT": "Development" }
+      }
+    }
+  }
+}
